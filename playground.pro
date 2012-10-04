@@ -12,7 +12,8 @@ SOURCES += main.cpp \
     Patterns/pimpltemplateexample.cpp \
     Patterns/strategy.cpp \
     Exceptions/exceptions.cpp \
-    Exceptions/exception_specifications.cpp
+    Exceptions/exception_specifications.cpp \
+    Patterns/virtual_constructor.cpp
 
 
 
