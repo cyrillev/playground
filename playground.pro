@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     Patterns/strategy.cpp \
     Exceptions/exceptions.cpp \
     Exceptions/exception_specifications.cpp \
-    Patterns/virtual_constructor.cpp
+    Patterns/virtual_constructor.cpp \
+    Patterns/limitedinstances.cpp
 
 
 
@@ -25,7 +26,8 @@ HEADERS += \
     Exceptions/exceptionsafe_destructor.h \
     Patterns/pimplexample.h \
     Patterns/pimpltemplateexample.h \
-    Patterns/strategy.h
+    Patterns/strategy.h \
+    Patterns/limitedinstances.h
 
 OTHER_FILES += \
     REFERENCES.txt
