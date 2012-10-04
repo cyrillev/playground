@@ -28,7 +28,7 @@ PimplExample::PimplExample()
     pImpl( shared_ptr<PimplExampleImplementation>(new PimplExample::PimplExampleImplementation() ))
 {}
 
-PimplExample::PimplExample(string name)
+PimplExample::PimplExample(const string& name)
     : Verbose(name),
       pImpl ( shared_ptr<PimplExampleImplementation>(new PimplExample::PimplExampleImplementation(string("implementation of ") + name)))
 {}
@@ -80,7 +80,7 @@ void PimplExample::serialize(ostream& os) const
 
 
 
-void test_pimpltemplate()
+void test_pimpl()
 {
     //PimplExample a;
     //PimplExample fake(NULL);

@@ -22,7 +22,7 @@ Verbose::Verbose(const Verbose& rhs)
     {
         cout << "EXCEPTION when creating " << *this << endl;
 
-        throw std::exception();
+        throw exception();
         // Note: the destructor of this object is not called
         // because the objet is not yet alive
     }
@@ -30,14 +30,14 @@ Verbose::Verbose(const Verbose& rhs)
     cout << "Copy construct " << *this << " from " << rhs << endl;
 }
 
-Verbose::Verbose(string _name)
+Verbose::Verbose(const string & _name)
     : name(_name),  instance(getNewInstance())
 {
     if (name.find("force_exception_in_constructor") != string::npos)
     {
         cout << "EXCEPTION when creating " << *this << endl;
 
-        throw std::exception();
+        throw exception();
         // Note: the destructor of this object is not called
         // because the objet is not yet alive
     }
@@ -50,7 +50,7 @@ Verbose::~Verbose()
     cout << "Destroy " << *this << endl;
 }
 
-void Verbose::serialize(std::ostream& os) const
+void Verbose::serialize(ostream& os) const
 {
     os << "object #" + to_string(instance) + " named <" + name + ">";
 }

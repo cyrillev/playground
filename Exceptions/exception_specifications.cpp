@@ -5,7 +5,7 @@ class MyException : public Verbose
 {
 public:
     MyException() : Verbose("MyException") {}
-    MyException(string name) : Verbose(name) {}
+    MyException(const string & name) : Verbose(name) {}
 
     virtual const char* what() const throw() // this function throws no exceptions
     { return "because I am MyException"; }

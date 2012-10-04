@@ -7,7 +7,7 @@ class Verbose : public serializable<Verbose>
 {
 public:
     Verbose();
-    Verbose(std::string name);
+    Verbose(const string& name);
     Verbose(const Verbose& rhs);
 
     virtual ~Verbose();
@@ -17,7 +17,7 @@ public:
     void swap(Verbose& rhs);
 
 
-    virtual void serialize(std::ostream& os) const;
+    virtual void serialize(ostream& os) const;
 
 private:
     std::string name;

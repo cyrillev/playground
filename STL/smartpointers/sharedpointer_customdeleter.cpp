@@ -5,7 +5,7 @@ class SharedPtrWithCustomDeleter;
 class SharedObjectWithCustomDeleter : public Verbose
 {
 public:
-    explicit SharedObjectWithCustomDeleter(string name) : Verbose(name) {}
+    explicit SharedObjectWithCustomDeleter(const string & name) : Verbose(name) {}
     static shared_ptr<SharedObjectWithCustomDeleter> createSharedObjectWithCustomDeleter();
 };
 

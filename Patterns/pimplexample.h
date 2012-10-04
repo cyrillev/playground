@@ -7,7 +7,7 @@ class PimplExample : public Verbose
 {
 public:
     PimplExample();
-    PimplExample(string name);
+    PimplExample(const string& name);
     PimplExample(const PimplExample& rhs);
     PimplExample& operator=(const PimplExample& rhs);
     virtual ~PimplExample();

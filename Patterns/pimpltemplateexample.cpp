@@ -33,7 +33,7 @@ PimplTemplateExample<T>::PimplTemplateExample()
 
 
 template<typename T>
-PimplTemplateExample<T>::PimplTemplateExample(string name)
+PimplTemplateExample<T>::PimplTemplateExample(const string &name)
     : Verbose(name)
 {
     pImpl = ptrImpl(new PimplExampleTemplateImplementation<T>(string("implementation of ") + name));

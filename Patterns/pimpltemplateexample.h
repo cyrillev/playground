@@ -4,14 +4,14 @@
 
 #include "common.h"
 
-template<typename U> class PimplExampleTemplateImplementation;
+template<typename U> struct PimplExampleTemplateImplementation;
 
 template<typename T>
 class PimplTemplateExample : public Verbose
 {
 public:
     PimplTemplateExample();
-    PimplTemplateExample(string name);
+    PimplTemplateExample(const string& name);
     PimplTemplateExample(const PimplTemplateExample<T>& rhs);
     PimplTemplateExample& operator=(const PimplTemplateExample<T>& rhs);
     virtual ~PimplTemplateExample();
