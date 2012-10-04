@@ -1,3 +1,15 @@
+BOOKS
+Scott Myers - Effective C++ - 3rd edition
+Scott Myers - More Effective C++
+Scott Myers - Effective STL
+
+
+
+STACKOVERFLOW LINKS
+
+
+VARIOUS LINKS
+
 Several C++ singleton implementations
 http://silviuardelean.ro/2012/06/05/few-singleton-approaches/
 
