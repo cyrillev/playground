@@ -10,7 +10,9 @@ SOURCES += main.cpp \
     STL/smartpointers/sharedpointer_customdeleter.cpp \
     Patterns/pimplexample.cpp \
     Patterns/pimpltemplateexample.cpp \
-    Patterns/strategy.cpp
+    Patterns/strategy.cpp \
+    Exceptions/exceptions.cpp \
+    Exceptions/exception_specifications.cpp
 
 
 
