@@ -1,0 +1,5 @@
+Several C++ singleton implementations
+http://silviuardelean.ro/2012/06/05/few-singleton-approaches/
+
+C++ Overloading operator<< for std::ostream
+http://lifecs.likai.org/2010/10/c-overloading-operator-for-stdostream.html
