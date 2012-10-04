@@ -17,11 +17,17 @@
 // STL containers
 #include <vector>
 #include <list>
+
+// std::tr1
+#include <tr1/functional>
+
 using namespace std;
 using namespace std::tr1;
+using namespace std::tr1::placeholders;
 
 //  Boost
 #include <boost/algorithm/string/join.hpp>
+
 
 // Useful template function to print any object
 template<class T>

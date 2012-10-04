@@ -1,4 +1,3 @@
-#include <iostream>
 #include "common.h"
 
 #include "Patterns/uncopyable.h"
