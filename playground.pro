@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     Exceptions/exceptionsafe_destructor.cpp \
     STL/smartpointers/sharedpointer_customdeleter.cpp \
     Patterns/pimplexample.cpp \
-    Patterns/pimpltemplateexample.cpp
+    Patterns/pimpltemplateexample.cpp \
+    Patterns/strategy.cpp
 
 
 
@@ -20,7 +21,8 @@ HEADERS += \
     Patterns/unthreadsafesingleton.h \
     Exceptions/exceptionsafe_destructor.h \
     Patterns/pimplexample.h \
-    Patterns/pimpltemplateexample.h
+    Patterns/pimpltemplateexample.h \
+    Patterns/strategy.h
 
 OTHER_FILES += \
     REFERENCES.txt

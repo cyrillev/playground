@@ -14,7 +14,7 @@ int main()
     // RUN_TEST( test_ExceptionSafeDestructor );
     // RUN_TEST( test_SharedObjectWithCustomDeleter );
     // RUN_TEST( test_pimpl );
-    RUN_TEST( test_pimpl_temlate );
-
+    // RUN_TEST( test_pimpl_temlate );
+    RUN_TEST( test_strategy );
 }
 
