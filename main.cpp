@@ -20,7 +20,8 @@ int main()
     // RUN_TEST( test_pimpl_temlate );
     // RUN_TEST( test_strategy );
     // RUN_TEST( test_virtual_constructor );
-    RUN_TEST( test_limitedInstances );
+    // RUN_TEST( test_limitedInstances );
+    RUN_TEST( test_double_dispatcher );
 
     // EXCEPTIONS
     // RUN_TEST( test_exceptions );

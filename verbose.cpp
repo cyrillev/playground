@@ -10,7 +10,7 @@ unsigned int getNewInstance()
 
 
 Verbose::Verbose()
-    : name("unnamed"),  instance(getNewInstance())
+    : name(string(typeid(*this).name())),  instance(getNewInstance())
 {
     cout << "Default construct " << *this << endl;
 }

@@ -14,8 +14,8 @@ SOURCES += main.cpp \
     Exceptions/exceptions.cpp \
     Exceptions/exception_specifications.cpp \
     Patterns/virtual_constructor.cpp \
-    Patterns/limitedinstances.cpp
-
+    Patterns/limitedinstances.cpp \
+    Patterns/doubledispatch_test.cpp
 
 
 HEADERS += \
@@ -27,7 +27,8 @@ HEADERS += \
     Patterns/pimplexample.h \
     Patterns/pimpltemplateexample.h \
     Patterns/strategy.h \
-    Patterns/limitedinstances.h
+    Patterns/limitedinstances.h \
+    Patterns/lldoubledispatch.h
 
 OTHER_FILES += \
     REFERENCES.txt
