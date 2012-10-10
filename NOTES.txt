@@ -1,0 +1,14 @@
+C++11 on MacOSX Snow Leopard
+----------------
+1. Install clang
+Install MacPorts ; http://www.macports.org/install.php
+sudo port install clang
+http://lists.cs.uiuc.edu/pipermail/cfe-dev/2011-January/013001.html
+
+2. Install libc++
+http://libcxx.llvm.org/
+
+3. Add to qmake.pro:
+QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
+QMAKE_CXXFLAGS += -D__STDC_FORMAT_MACROS -U__STRICT_ANSI__
+QMAKE_LFLAGS += -std=c++11 -stdlib=libc++

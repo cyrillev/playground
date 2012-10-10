@@ -1,6 +1,12 @@
 TEMPLATE = app
 CONFIG += console
 
+
+QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
+QMAKE_CXXFLAGS += -D__STDC_FORMAT_MACROS -U__STRICT_ANSI__
+QMAKE_LFLAGS += -std=c++11 -stdlib=libc++
+
+
 SOURCES += main.cpp \
     STL/container/encapsulation.cpp \
     verbose.cpp \
@@ -15,7 +21,12 @@ SOURCES += main.cpp \
     Exceptions/exception_specifications.cpp \
     Patterns/virtual_constructor.cpp \
     Patterns/limitedinstances.cpp \
-    Patterns/doubledispatch_test.cpp
+    Patterns/doubledispatch_test.cpp \
+    cpp11/lambda.cpp \
+    cpp11/auto.cpp \
+    cpp11/initialization.cpp \
+    cpp11/for.cpp \
+    cpp11/constexpr.cpp
 
 
 HEADERS += \
@@ -31,6 +42,7 @@ HEADERS += \
     Patterns/lldoubledispatch.h
 
 OTHER_FILES += \
-    REFERENCES.txt
+    REFERENCES.txt \
+    NOTES.txt
 
 INCLUDEPATH += /opt/local/include

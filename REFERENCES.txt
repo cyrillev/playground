@@ -18,3 +18,8 @@ http://silviuardelean.ro/2012/06/05/few-singleton-approaches/
 
 C++ Overloading operator<< for std::ostream
 http://lifecs.likai.org/2010/10/c-overloading-operator-for-stdostream.html
+
+Copy and Move assignment operators
+http://www.cplusplus.com/articles/y8hv0pDG/
+http://cpp-next.com/archive/2009/08/want-speed-pass-by-value/
+http://cpp-next.com/archive/2009/09/move-it-with-rvalue-references/

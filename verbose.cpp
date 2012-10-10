@@ -30,8 +30,14 @@ Verbose::Verbose(const Verbose& rhs)
     cout << "Copy construct " << *this << " from " << rhs << endl;
 }
 
+Verbose::Verbose(const Verbose&& rhs)
+    : name( std::move(rhs.name)), instance(getNewInstance())
+{
+    cout << "Move constructor " << *this << " from " << rhs << endl;
+}
+
 Verbose::Verbose(const string & _name)
-    : name(_name),  instance(getNewInstance())
+    : name(_name), instance(getNewInstance())
 {
     if (name.find("force_exception_in_constructor") != string::npos)
     {
@@ -55,29 +61,78 @@ void Verbose::serialize(ostream& os) const
     os << "object #" + to_string(instance) + " named <" + name + ">";
 }
 
+ // our own implementation of swap must NOT throw exceptions
 void Verbose::swap(Verbose& rhs)
 {
     cout << "Swap " << *this << " <-> " << rhs << endl;
-    std::swap(name, rhs.name);
+    std::swap(name, rhs.name); // do not throw exceptions
 }
 
-Verbose& Verbose::operator = (Verbose rhs)
+
+Verbose& Verbose::operator = (const Verbose& rhs)
 {
-    cout << "assignement " << *this << " = " << rhs << endl;
-    swap(rhs);
+    cout << "copy assignement " << *this << " = " << rhs << endl;
+
+    // make a copy of the right-hand side
+    // The copy-constructor may throw, but the left-hand side has not been modified yet
+    // => the left-hand side (this) is still a valid object
+    Verbose copy = rhs;
+
+    // our own implementation of swap must NOT throw exceptions
+    swap(copy);
     return *this;
 }
 
 
+Verbose& Verbose::operator = (Verbose&& rhs)
+{
+    cout << "Move assignement " << *this << " = " << rhs << endl;
 
+    name = std::move( rhs.name );
+
+    // std::move nullify the right-hand side string
+    // butjust to mark it invalid :
+    rhs.name = "INVALIDATED AFTER MOVE OPERATION";
+
+    return *this;
+}
+
+const string Verbose::getName() const
+{
+    return name;
+}
 
 
 void test_verbose()
 {
-    const Verbose obj1("const");
+    const Verbose obj1("obj1");
+
+    cout << "-- Verbose obj2(\"obj2\"); -- " << endl;
     Verbose obj2("obj2");
+
+    cout << "-- Verbose obj3 = obj2; -- " << endl;
     Verbose obj3 = obj2;
 
+    cout << "-- obj3.swap(obj2); -- " << endl;
+    cout  << "obj3: " << obj3 << endl;
+    cout  << "obj2: " << obj2 << endl;
     obj3.swap(obj2);
+    cout  << "obj3: " << obj3 << endl;
+    cout  << "obj2: " << obj2 << endl;
+
+
+    cout << "-- obj3 = obj1 -- " << endl;
+    cout  << "obj3: " << obj3 << endl;
+    cout  << "obj1: " << obj1 << endl;
     obj3 = obj1;
+    cout  << "obj3: " << obj3 << endl;
+    cout  << "obj1: " << obj1 << endl;
+
+    cout << "-- obj2 = std::move(obj3) -- " << endl;
+    cout  << "obj2: " << obj2 << endl;
+    cout  << "obj3: " << obj3 << endl;
+    Verbose& mObj3 = obj3;
+    obj2 = std::move(mObj3);
+    cout  << "obj2: " << obj2 << endl;
+    cout  << "obj3: " << obj3 << endl;
 }

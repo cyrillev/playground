@@ -12,18 +12,18 @@
 
 // STL smart pointers
 #include <memory>
-#include <tr1/memory>
 
 // STL containers
 #include <vector>
 #include <list>
 
+// STL maths
+#include <complex>
+
 // std::tr1
-#include <tr1/functional>
+#include <functional>
 
 using namespace std;
-using namespace std::tr1;
-using namespace std::tr1::placeholders;
 
 //  Boost
 #include <boost/algorithm/string/join.hpp>
