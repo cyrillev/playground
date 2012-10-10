@@ -31,8 +31,9 @@ int main()
     // C++11
     // RUN_TEST( test_auto );
     // RUN_TEST( test_initialization );
-    // RUN_TEST( test_lambda );
     // RUN_TEST( test_for );
-    RUN_TEST( test_constexpr );
+    // RUN_TEST( test_constexpr );
+    // RUN_TEST( test_variadic_template );
+     RUN_TEST( test_lambda );
 }
 

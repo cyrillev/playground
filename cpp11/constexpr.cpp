@@ -4,13 +4,14 @@ constexpr int square(int i)
 {
     // cout << "square: i=" << i;  error: statement not allowed in constexpr function
     // int square = i*i; error: variables cannot be declared in a constexpr function
-
+    // constexpr int result = i*i; // error: constexpr variable 'result' must be initialized by a constant expression
 
     // no internal variables
     // no dynamic casts
     // no memory allocation
     // no calls to non-constexpr functions
     // no conditional statement
+
 
     return i*i; //  non-void return type
 }
