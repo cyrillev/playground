@@ -30,11 +30,14 @@ Verbose::Verbose(const Verbose& rhs)
     cout << "Copy construct " << *this << " from " << rhs << endl;
 }
 
+
+#ifdef CPLUSPLUS11
 Verbose::Verbose(const Verbose&& rhs)
     : name( std::move(rhs.name)), instance(getNewInstance())
 {
     cout << "Move constructor " << *this << " from " << rhs << endl;
 }
+#endif
 
 Verbose::Verbose(const string & _name)
     : name(_name), instance(getNewInstance())
@@ -83,7 +86,7 @@ Verbose& Verbose::operator = (const Verbose& rhs)
     return *this;
 }
 
-
+#ifdef CPLUSPLUS11
 Verbose& Verbose::operator = (Verbose&& rhs)
 {
     cout << "Move assignement " << *this << " = " << rhs << endl;
@@ -96,6 +99,7 @@ Verbose& Verbose::operator = (Verbose&& rhs)
 
     return *this;
 }
+#endif
 
 const string Verbose::getName() const
 {
@@ -128,6 +132,7 @@ void test_verbose()
     cout  << "obj3: " << obj3 << endl;
     cout  << "obj1: " << obj1 << endl;
 
+#ifdef CPLUSPLUS11
     cout << "-- obj2 = std::move(obj3) -- " << endl;
     cout  << "obj2: " << obj2 << endl;
     cout  << "obj3: " << obj3 << endl;
@@ -135,4 +140,5 @@ void test_verbose()
     obj2 = std::move(mObj3);
     cout  << "obj2: " << obj2 << endl;
     cout  << "obj3: " << obj3 << endl;
+#endif
 }

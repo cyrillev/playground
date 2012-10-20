@@ -1,7 +1,13 @@
+Install MacPorts ; http://www.macports.org/install.php
+
+
+Boost on MacOSX Snow leopoard
+----------------
+sudo port install boost
+
 C++11 on MacOSX Snow Leopard
 ----------------
 1. Install clang
-Install MacPorts ; http://www.macports.org/install.php
 sudo port install clang
 http://lists.cs.uiuc.edu/pipermail/cfe-dev/2011-January/013001.html
 

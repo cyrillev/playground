@@ -9,13 +9,14 @@ public:
     Verbose();
     Verbose(const string& name);
     Verbose(const Verbose& rhs);  // copy constructor
-    Verbose(const Verbose&& rhs); // move constructor
-
     virtual ~Verbose();
-
     Verbose& operator = (const Verbose& rhs);   // copy assignement operator
-    Verbose& operator = (Verbose&& rhs) ; // move assignement operator
     void swap(Verbose& rhs);
+
+#ifdef CPLUSPLUS11
+    Verbose(const Verbose&& rhs); // move constructor
+    Verbose& operator = (Verbose&& rhs) ; // move assignement operator
+#endif
 
     const string getName() const;
     virtual void serialize(ostream& os) const;

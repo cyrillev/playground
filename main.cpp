@@ -24,16 +24,19 @@ int main()
     // RUN_TEST( test_double_dispatcher );
 
     // EXCEPTIONS
-     //RUN_TEST( test_exceptions );
-     //RUN_TEST( test_exception_specifications );
-     // RUN_TEST( test_ExceptionSafeDestructor );
+    // RUN_TEST( test_exceptions );
+    // RUN_TEST( test_exception_specifications );
+    // RUN_TEST( test_ExceptionSafeDestructor );
 
+#ifdef CPLUSPLUS11
     // C++11
     // RUN_TEST( test_auto );
     // RUN_TEST( test_initialization );
     // RUN_TEST( test_for );
     // RUN_TEST( test_constexpr );
     // RUN_TEST( test_variadic_template );
-     RUN_TEST( test_lambda );
+    // RUN_TEST( test_lambda );
+#endif
+
 }
 

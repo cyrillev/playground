@@ -28,6 +28,12 @@ using namespace std;
 //  Boost
 #include <boost/algorithm/string/join.hpp>
 
+#ifndef CPLUSPLUS11
+#include <boost/shared_ptr.hpp>
+#include <boost/function.hpp>
+using boost::shared_ptr;
+using boost::function;
+#endif
 
 // Useful template function to print any object
 template<class T>
