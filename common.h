@@ -1,26 +1,15 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-// STL string support
 #include <ostream>
 #include <iostream>
 #include <sstream>
 #include <string>
-
-// STL exceptions
 #include <stdexcept>
-
-// STL smart pointers
 #include <memory>
-
-// STL containers
 #include <vector>
 #include <list>
-
-// STL maths
 #include <complex>
-
-// std::tr1
 #include <functional>
 
 using namespace std;
@@ -30,9 +19,43 @@ using namespace std;
 
 #ifndef CPLUSPLUS11
 #include <boost/shared_ptr.hpp>
+#include <boost/weak_ptr.hpp>
+#include <boost/enable_shared_from_this.hpp>
 #include <boost/function.hpp>
+#include <boost/thread.hpp>
+#include <boost/thread/mutex.hpp>
+#include <boost/thread/locks.hpp>
+#include <boost/random.hpp>
+#include <boost/random/mersenne_twister.hpp>
+#include <boost/random/uniform_int_distribution.hpp>
+
+using boost::weak_ptr;
 using boost::shared_ptr;
+using boost::enable_shared_from_this;
 using boost::function;
+using boost::thread;
+using boost::mutex;
+using boost::lock_guard;
+using boost::unique_lock;
+using boost::condition_variable;
+
+using namespace boost::random;
+using namespace boost::posix_time;
+
+namespace this_thread
+{
+void sleep_for(time_duration abs_time);
+}
+
+#else
+#include <random>
+#include <chrono>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+
+using namespace std::chrono;
+
 #endif
 
 // Useful template function to print any object

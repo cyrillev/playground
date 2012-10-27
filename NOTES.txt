@@ -3,12 +3,18 @@ Install MacPorts ; http://www.macports.org/install.php
 
 Boost on MacOSX Snow leopoard
 ----------------
+1. Install booth
 sudo port install boost
+
+2. Add to qmake.pro (if needed):
+INCLUDEPATH += /opt/local/include
+QMAKE_LIBDIR += /opt/local/lib
+LIBS += -lboost_thread-mt -lboost_system-mt
 
 C++11 on MacOSX Snow Leopard
 ----------------
 1. Install clang
-sudo port install clang
+sudo port install clang-2.9
 http://lists.cs.uiuc.edu/pipermail/cfe-dev/2011-January/013001.html
 
 2. Install libc++

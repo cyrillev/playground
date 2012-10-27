@@ -6,44 +6,14 @@ QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
 QMAKE_CXXFLAGS += -D__STDC_FORMAT_MACROS -U__STRICT_ANSI__ -DCPLUSPLUS11
 QMAKE_LFLAGS += -std=c++11 -stdlib=libc++
 
-
-SOURCES += main.cpp \
-    STL/container/encapsulation.cpp \
-    verbose.cpp \
-    Patterns/uncopyable_example.cpp \
-    common.cpp \
-    Exceptions/exceptionsafe_destructor.cpp \
-    STL/smartpointers/sharedpointer_customdeleter.cpp \
-    Patterns/pimplexample.cpp \
-    Patterns/pimpltemplateexample.cpp \
-    Patterns/strategy.cpp \
-    Exceptions/exceptions.cpp \
-    Exceptions/exception_specifications.cpp \
-    Patterns/virtual_constructor.cpp \
-    Patterns/limitedinstances.cpp \
-    Patterns/doubledispatch_test.cpp \
-    cpp11/lambda.cpp \
-    cpp11/auto.cpp \
-    cpp11/initialization.cpp \
-    cpp11/for.cpp \
-    cpp11/constexpr.cpp \
-    cpp11/variadic_template.cpp
-
-
-HEADERS += \
-    verbose.h \
-    common.h \
-    Patterns/uncopyable.h \
-    Patterns/unthreadsafesingleton.h \
-    Exceptions/exceptionsafe_destructor.h \
-    Patterns/pimplexample.h \
-    Patterns/pimpltemplateexample.h \
-    Patterns/strategy.h \
-    Patterns/limitedinstances.h \
-    Patterns/lldoubledispatch.h
+include (sources.pri)
+include (sources_cpp11.pri)
 
 OTHER_FILES += \
     REFERENCES.txt \
     NOTES.txt
 
+# boost
 INCLUDEPATH += /opt/local/include
+QMAKE_LIBDIR += /opt/local/lib
+LIBS += -lboost_thread-mt -lboost_system-mt

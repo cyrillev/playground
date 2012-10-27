@@ -26,4 +26,18 @@ private:
     const unsigned int instance;
 };
 
+class VerboseThread : public Verbose
+{
+public:
+    VerboseThread(const string& name);
+    void Run();
+
+    // overriden from Verbose
+    void serialize(ostream& os) const;
+
+protected:
+    void randomSleep();
+    virtual void process() = 0;
+};
+
 #endif // VERBOSE_H

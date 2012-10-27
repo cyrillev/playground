@@ -76,7 +76,7 @@ void PimplTemplateExample<T>::swap(PimplTemplateExample<T>& other)
 }
 
 template<typename T>
-void  PimplTemplateExample<T>::serialize(ostream& os) const
+void PimplTemplateExample<T>::serialize(ostream& os) const
 {
     string content = boost::algorithm::join(pImpl->my_list, ", ");
     os << *pImpl << string(" has content: ") << content;

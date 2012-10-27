@@ -77,15 +77,17 @@ void test_ExceptionSafeDestructor()
     safeExamples.push_back( shared_ptr<ExceptionSafeDestructor>( new ExceptionSafeDestructor() ));
     safeExamples.clear();
 
+#if THIS_BAD_CODE_CRASHES_WITH_CLANG
     try
     {
         BadExample badExample1("badExample1");
     }
     catch(...)
     {
+        // CLANG crashsed with the following msg: "terminate called without an active exception"
         cout << "It works but next bad example does not";
     }
-
+#endif
 
 #if THIS_BAD_CODE_CRASHES
     try

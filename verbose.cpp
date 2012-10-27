@@ -1,6 +1,9 @@
 #include "verbose.h"
 #include "common.h"
 
+
+static mt19937 gen;
+
 static unsigned int globalCounter = 0;
 
 unsigned int getNewInstance()
@@ -106,6 +109,31 @@ const string Verbose::getName() const
     return name;
 }
 
+
+VerboseThread::VerboseThread(const string& name)
+    : Verbose(name) {}
+
+void  VerboseThread::serialize(ostream& os) const
+{
+    os << "[" << getName() << "] ";
+}
+
+
+void VerboseThread::Run()
+{
+    std::cout << "[" << getName() << "] BEGIN Run" << endl;
+    process();
+    std::cout << "[" << getName() << "] END   Run" << endl;
+}
+
+void VerboseThread::randomSleep()
+{
+    uniform_int_distribution<> dist(500, 6000);
+    unsigned int time_ms = dist(gen);
+
+    cout << *this << "sleep for " << time_ms << " ms" << endl;
+    this_thread::sleep_for( milliseconds(time_ms) );
+}
 
 void test_verbose()
 {
