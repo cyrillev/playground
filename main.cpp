@@ -30,6 +30,10 @@ int main()
     RUN_TEST( test_exception_specifications );
     RUN_TEST( test_ExceptionSafeDestructor );
 
+    // BOOST
+    RUN_TEST( test_signals );
+
+
 #ifdef CPLUSPLUS11
     // C++11
     RUN_TEST( test_auto );

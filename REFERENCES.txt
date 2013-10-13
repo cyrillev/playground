@@ -23,3 +23,7 @@ Copy and Move assignment operators
 http://www.cplusplus.com/articles/y8hv0pDG/
 http://cpp-next.com/archive/2009/08/want-speed-pass-by-value/
 http://cpp-next.com/archive/2009/09/move-it-with-rvalue-references/
+
+
+threads:
+http://akrzemi1.wordpress.com/2012/11/14/not-using-stdthread/

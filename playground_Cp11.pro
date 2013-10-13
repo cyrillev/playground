@@ -3,7 +3,7 @@ CONFIG += console
 
 
 QMAKE_CXXFLAGS += -std=c++11 -stdlib=libc++
-QMAKE_CXXFLAGS += -D__STDC_FORMAT_MACROS -U__STRICT_ANSI__ -DCPLUSPLUS11
+QMAKE_CXXFLAGS += -D__STDC_FORMAT_MACROS -U__STRICT_ANSI__ -DCPLUSPLUS11 -Wunused-parameter
 QMAKE_LFLAGS += -std=c++11 -stdlib=libc++
 
 include (sources.pri)
@@ -16,4 +16,5 @@ OTHER_FILES += \
 # boost
 INCLUDEPATH += /opt/local/include
 QMAKE_LIBDIR += /opt/local/lib
-LIBS += -lboost_thread-mt -lboost_system-mt
+LIBS += -lboost_thread-mt -lboost_system-mt -lboost_filesystem-mt -lboost_regex-mt -lboost_signals-mt
+

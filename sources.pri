@@ -16,8 +16,12 @@ SOURCES += main.cpp \
     Patterns/limitedinstances.cpp \
     Patterns/doubledispatch_test.cpp \
     STL/Threading/condition_variable.cpp \
-    STL/smartpointers/weak_pointers.cpp
-
+    STL/smartpointers/weak_pointers.cpp \
+    boost/signals/document.cpp \
+    boost/signals/textview.cpp \
+    boost/signals/hexview.cpp \
+    boost/signals/test_signals.cpp \
+    boost/signals/view.cpp
 
 HEADERS += \
     verbose.h \
@@ -29,4 +33,11 @@ HEADERS += \
     Patterns/pimpltemplateexample.h \
     Patterns/strategy.h \
     Patterns/limitedinstances.h \
-    Patterns/lldoubledispatch.h
+    Patterns/lldoubledispatch.h \
+    boost/signals/documents.h \
+    boost/signals/textview.h \
+    boost/signals/hexview.h \
+    boost/signals/textview.h \
+    boost/signals/document.h \
+    boost/signals/hexview.h \
+    boost/signals/view.h
